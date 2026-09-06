@@ -1,12 +1,12 @@
 import nodemailer from 'nodemailer';
-export async function sendMail(to: string, subject: string, html: string) { 
+export async function sendEMail(to: string, subject: string, html: string) { 
     if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) { 
         console.log('Email environments are not available!');
         return;
     }
 
     const host = process.env.SMTP_HOST;
-    const port = Number(process.env.SMTP_PORT || "587");
+    const port = Number(process.env.SMTP_PORT || "2525");
     const user = process.env.SMTP_USER;
 
     const pass = process.env.SMTP_PASS;
