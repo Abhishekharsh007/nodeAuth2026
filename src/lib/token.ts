@@ -9,11 +9,11 @@ export function createAccessToken( userId: string, role: "user" | "admin", token
 
 export function createRefreshToken(userId: string, tokenVersion: number) {
     const payload = { sub: userId, tokenVersion };
-    return jwt.sign(payload, process.env.JWT_ACCESS_SECRET!, { expiresIn: "7d" });
+    return jwt.sign(payload, process.env.JWT_REFRESH_SECRET!, { expiresIn: "7d" });
 }
 
 export function verifyRefreshToken(token: string) { 
-    return jwt.verify(token, process.env.JWT_ACCESS_SECRET!) as {
+    return jwt.verify(token, process.env.JWT_REFRESH_SECRET!) as {
         sub: string,
         tokenVersion: number
     };

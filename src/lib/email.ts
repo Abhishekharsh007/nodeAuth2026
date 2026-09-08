@@ -27,7 +27,7 @@ export async function sendEMail(to: string, subject: string, html: string) {
         from,
         to: to || "A Test User <to@example.com>",
         subject: subject || "Hello from Mailtrap",
-        text: html || "This is a test e-mail message.",
+        html: html || "This is a test e-mail message.",
       },
       (error, info) => {
         if (error) {
