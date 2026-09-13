@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 import { sendEMail } from "../../lib/email";
 import { createAccessToken, createRefreshToken, verifyRefreshToken } from "../../lib/token";
 import crypto from "crypto";
-import { GoogleAuth, OAuth2Client } from "google-auth-library"
+import { OAuth2Client } from "google-auth-library"
 
 function getAppUrl() { 
     return process.env.APP_URL || `http://localhost:${process.env.PORT}`; 
