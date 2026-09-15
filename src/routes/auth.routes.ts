@@ -8,8 +8,11 @@ import {
     refreshHandler,
     registerHandler,
     resetPasswordHandler,
+    twoFASetupHandler,
+    twoFAVerifyHandler,
     verifyEmailHandler
 } from "../controllers/auth/auth.controllers";
+import requireAuth from "../middleware/requireAuth";
 
 const router = Router();
 
@@ -22,5 +25,7 @@ router.post('/forgot-password/:token', forgotPasswordHandler);
 router.post('/reset-password', resetPasswordHandler);
 router.get('/google', googleAuthStartHandler);
 router.get('/google/callback', googleAuthCallbackHandler);
+router.post('/2fa/setup', requireAuth, twoFASetupHandler);
+router.post("/2fa/verify", requireAuth, twoFAVerifyHandler);
 
 export default router;
