@@ -10,7 +10,7 @@ async function startServer() {
 
     const server = http.createServer(app);
 
-    server.listen(process.env.PORT, () => { 
+    server.listen(5000, () => { 
         console.log(`Server is running!`);
     });
 }
