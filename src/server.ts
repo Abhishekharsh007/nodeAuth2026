@@ -10,8 +10,8 @@ async function startServer() {
 
     const server = http.createServer(app);
 
-    server.listen(5000, () => { 
-        console.log(`Server is running!`);
+    server.listen(process.env.PORT, () => { 
+        console.log(`Server is running on ${process.env.PORT}`);
     });
 }
 
